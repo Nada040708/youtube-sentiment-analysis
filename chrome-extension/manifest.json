@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Sentiment Analyzer",
+  "version": "1.0",
+  "description": "Analyse automatique du sentiment des commentaires YouTube.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "http://127.0.0.1:8000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Sentiment Analyzer"
+  }
+}

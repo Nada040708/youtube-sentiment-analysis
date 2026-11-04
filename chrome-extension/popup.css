@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 430px;
+    min-height: 500px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #202938;
+}
+
+.container {
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+header p {
+    color: #777;
+    font-size: 12px;
+}
+
+button, select {
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button {
+    background: #315efb;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+#analyzeBtn {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    text-align: center;
+    padding: 15px;
+    color: #315efb;
+}
+
+#error {
+    background: #ffe5e5;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.total-card {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.total-card h2 {
+    font-size: 30px;
+    margin: 5px;
+}
+
+.statistics {
+    display: flex;
+    gap: 8px;
+}
+
+.stat {
+    flex: 1;
+    padding: 12px 5px;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+}
+
+.stat h3 {
+    margin: 5px;
+}
+
+.positive {
+    color: #159957;
+}
+
+.neutral {
+    color: #d69e00;
+}
+
+.negative {
+    color: #d64545;
+}
+
+.chart-container {
+    background: white;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    height: 190px;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+.actions select {
+    flex: 1;
+    min-width: 0;
+}
+
+.actions button {
+    font-size: 11px;
+}
+
+#results {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.comment {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.comment p {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.badge {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.confidence {
+    font-size: 11px;
+    color: #777;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Dark mode */
+
+body.dark {
+    background: #171923;
+    color: #f1f1f1;
+}
+
+body.dark .total-card,
+body.dark .stat,
+body.dark .comment,
+body.dark .chart-container {
+    background: #252a38;
+}
+
+body.dark header p,
+body.dark .confidence {
+    color: #aaa;
+}
+
+body.dark select {
+    background: #252a38;
+    color: white;
+}

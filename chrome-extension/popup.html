@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Sentiment Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>Sentiment Analyzer</h1>
+                <p>Analyse des commentaires YouTube</p>
+            </div>
+
+            <button id="themeBtn">Mode sombre</button>
+        </header>
+
+        <button id="analyzeBtn">Analyser les commentaires</button>
+
+        <div id="loading" class="hidden">
+            Analyse en cours...
+        </div>
+
+        <div id="error" class="hidden"></div>
+
+        <section id="dashboard" class="hidden">
+
+            <div class="total-card">
+                <h2 id="totalComments">0</h2>
+                <p>Commentaires analysés</p>
+            </div>
+
+            <div class="statistics">
+
+                <div class="stat positive">
+                    <h3 id="positivePercent">0%</h3>
+                    <p>Positifs</p>
+                </div>
+
+                <div class="stat neutral">
+                    <h3 id="neutralPercent">0%</h3>
+                    <p>Neutres</p>
+                </div>
+
+                <div class="stat negative">
+                    <h3 id="negativePercent">0%</h3>
+                    <p>Négatifs</p>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="sentimentChart"></canvas>
+            </div>
+
+            <div class="actions">
+
+                <select id="filter">
+                    <option value="all">Tous les sentiments</option>
+                    <option value="Positive">Positifs</option>
+                    <option value="Neutral">Neutres</option>
+                    <option value="Negative">Négatifs</option>
+                </select>
+
+                <button id="copyBtn">Copier</button>
+                <button id="exportBtn">Exporter CSV</button>
+
+            </div>
+
+            <div id="results"></div>
+
+        </section>
+
+        <footer>
+            YouTube Sentiment Analyzer – MLOps Project
+        </footer>
+
+    </div>
+
+    <script src="libs/chart.umd.js"></script>
+    <script src="popup.js"></script>
+
+</body>
+</html>
