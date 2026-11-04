@@ -1,0 +1,21 @@
+# Machine Learning
+scikit-learn
+pandas
+numpy
+joblib
+
+# API
+fastapi
+uvicorn[standard]
+pydantic
+
+# Data Visualization
+matplotlib
+seaborn
+
+# Testing
+pytest
+httpx
+
+# Utilities
+python-dotenv
