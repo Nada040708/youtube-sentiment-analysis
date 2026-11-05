@@ -276,3 +276,67 @@ L'extension communique avec l'endpoint `/predict_batch` de FastAPI. Les commenta
 
 **3. Optimisation :** utiliser le traitement par lots et éviter les extractions répétées.
 
+
+# Phase 6 – Déploiement cloud avec Docker
+
+### Objectif
+Conteneuriser l'API FastAPI et la déployer sur GitHub Codespaces avec une URL publique HTTPS.
+
+### Réalisations
+
+- Création de `app_api.py`, une API optimisée pour le déploiement.
+- Création de `requirements-prod.txt` contenant uniquement les dépendances nécessaires.
+- Création du `Dockerfile` basé sur `python:3.12-slim`.
+- Intégration du modèle et du vectoriseur dans l'image Docker.
+- Publication du projet et des modèles sur GitHub.
+- Construction et exécution du conteneur Docker sur GitHub Codespaces.
+- Exposition du port 7860 en accès public HTTPS.
+- Tests des endpoints `/health`, `/docs` et `/predict_batch`.
+- Mise à jour de l'extension Chrome pour utiliser l'API déployée.
+
+### Technologies utilisées
+Docker, GitHub, GitHub Codespaces, FastAPI et Python.
+
+### Fichiers ajoutés
+
+- `app_api.py` : API destinée au déploiement.
+- `requirements-prod.txt` : dépendances de production.
+- `Dockerfile` : configuration de l'image Docker.
+
+### Résultat attendu
+Une API conteneurisée, accessible via une URL HTTPS publique et connectée à l'extension Chrome.
+
+**Limitation :** l'API reste accessible uniquement lorsque le Codespace est actif.
+
+
+# Phase 7 – Tests et validation
+
+### Objectif
+Vérifier la qualité, la fiabilité et le bon fonctionnement du système complet.
+
+### Tests réalisés
+
+**1. Tests du modèle**
+- Vérification des performances sur le jeu de test.
+- Tests avec des textes courts et longs, des emojis et des langues mélangées.
+- Mesure du temps d'inférence.
+
+**2. Tests de l'API**
+- Vérification de `/health`.
+- Tests de `/predict_batch` avec différentes tailles de batch.
+- Vérification de la gestion des données invalides et des batchs vides.
+- Mesure du temps de réponse.
+
+**3. Tests de l'extension Chrome**
+- Vérification de l'installation et du chargement.
+- Extraction des commentaires YouTube.
+- Validation des statistiques, filtres, du mode sombre, de la copie et de l'export CSV.
+- Vérification de la gestion des erreurs réseau.
+
+**4. Tests d'intégration**
+- Validation du flux complet : extension Chrome → API → résultats.
+- Tests avec l'API locale et l'API cloud.
+- Comparaison de la cohérence des prédictions.
+
+### Résultat
+Validation du fonctionnement des différents composants et de leur intégration dans le système global.
